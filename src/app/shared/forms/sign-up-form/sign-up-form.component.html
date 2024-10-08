@@ -1,10 +1,14 @@
 <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
     <div class="field">
-      <label for="">Nom d'utilisateur</label>
+      <label for="">Nom</label>
       <input type="text" formControlName="name">
     </div>
     <div class="field">
-      <label for="">Adresse e-mail</label>
+      <label for="">Prénom</label>
+      <input type="text" formControlName="firstname">
+    </div>
+    <div class="field">
+      <label for="">Email</label>
       <input type="text" formControlName="email">
     </div>
     <div class="field">
@@ -14,5 +18,16 @@
         Le mot de passe doit contenir au moins 8 caractères, une majuscule, une minuscule, un chiffre et un caractère spécial.
       </span>
     </div>
-    <button class="submit-button bigger" type="submit">S'inscrire</button>
+
+    <div class="field">
+      <label for="picture">Votre carte vitale</label>
+      <div class="container-picture-input">
+        <div class="picture-input-deep">
+          <img src="assets/folder_picture.png" alt="ajout carte vitale">
+          <p>Sélectionnez un fichier</p>
+          <input class="picture-input" type="file" formControlName="picture" accept="image/*,.pdf"> <!-- This will accept images and PDFs -->
+        </div>
+      </div>
+    </div>
+    <button class="btn-green-style" type="submit">Je m'inscris</button>
   </form>

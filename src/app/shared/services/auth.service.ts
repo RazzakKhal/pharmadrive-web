@@ -23,7 +23,7 @@ export class AuthService {
   );
   }
 
-  register(registerForm : RegisterForm) : Observable<TokenResponse>{
+  register(registerForm : FormData) : Observable<TokenResponse>{
     return this.httpClient.post<TokenResponse>(`${API_URL}/auth/register`, registerForm).pipe(
       take(1)
     );

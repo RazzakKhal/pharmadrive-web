@@ -1,0 +1,13 @@
+.container{
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items:center ; 
+    height: 15vh;
+    background-color: var(--bg-green);
+}
+
+img{
+    width : 80%;
+}

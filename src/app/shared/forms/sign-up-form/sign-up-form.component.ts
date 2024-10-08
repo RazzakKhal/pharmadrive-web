@@ -18,14 +18,16 @@ import { CommonModule } from '@angular/common';
 export class SignUpFormComponent {
   registerForm!: FormGroup;
 
-  constructor(private formBuilder: FormBuilder, private authService : AuthService, private router : Router, private snackBar : MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private authService: AuthService, private router: Router, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
     this.registerForm = this.formBuilder.group({
       name: ['', Validators.required],
+      firstname: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', [Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
-  });
+      picture: ['', Validators.required] 
+    });
   }
 
   onSubmit() {
@@ -33,16 +35,24 @@ export class SignUpFormComponent {
     if (this.registerForm.invalid) {
       snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_FORMULAIRE)
 
-    }else{
-      const registerForm = new RegisterForm(this.registerForm.value.name, this.registerForm.value.email, this.registerForm.value.password);
-      this.authService.register(registerForm).subscribe(
+    } else {
+
+      const formData = new FormData();
+      formData.append('name', this.registerForm.value.name);
+      formData.append('firstname', this.registerForm.value.firstname);
+      formData.append('email', this.registerForm.value.email);
+      formData.append('password', this.registerForm.value.password);
+      formData.append('picture', this.registerForm.value.picture._files[0]);
+      
+
+      this.authService.register(formData).subscribe(
         {
-          next : (res : TokenResponse) => {this.authService.setToken(res.token); this.router.navigateByUrl("/articles"); },
-          error : () => {snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_INSCRIPTION);}
+          next: (res: TokenResponse) => { this.authService.setToken(res.token); this.router.navigateByUrl("/"); },
+          error: () => { snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_INSCRIPTION); }
         })
 
     }
 
 
-}
+  }
 }

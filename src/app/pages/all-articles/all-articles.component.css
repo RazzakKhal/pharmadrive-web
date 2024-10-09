@@ -1,19 +1,13 @@
-/* .product-list {
+.product-list {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
   padding: 20px;
+}
 
-  background-color: red;
-} */
-
-/* .product-list app-article-card {
+.product-list app-article-card {
   flex: 1 1 calc(50% - 20px);
   max-width: 300px;
   min-width: 200px;
-} */
-/* 
-p {
-  font-style: italic;
-} */
+}

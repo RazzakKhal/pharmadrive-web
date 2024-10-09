@@ -6,9 +6,9 @@
     <p class="article-price">5 €</p>
 
     <div class="quantity-selector">
-      <button (click)="decreaseQuantity()">-</button>
+      <i class="material-icons icons" (click)="decreaseQuantity()">remove_circle</i>
       <input type="number" [value]="quantity" class="quantity-input" readonly />
-      <button (click)="increaseQuantity()">+</button>
+      <i class="material-icons icons" (click)="increaseQuantity()">add_circle</i>
     </div>
   </div>
 </div>

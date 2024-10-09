@@ -28,6 +28,7 @@ p {
   font-size: 18px;
   color: #3C7E47;
   margin: 0;
+  font-family: var(----font-josefin);
 }
 
 .article-price {
@@ -40,6 +41,10 @@ p {
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 2px 10px;
+  background-color: var(--bg-green);
+  box-shadow: inset -5px 4px 4px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 15px;
 }
 
 .quantity-input {
@@ -48,6 +53,7 @@ p {
   border: none;
   background-color: transparent;
   color: #3C7E47;
+  font-size: 15px;
 }
 
 button {
@@ -62,4 +68,10 @@ button {
 
 button:focus {
   outline: none;
+}
+
+.icons {
+  cursor: pointer;
+  font-size: 25px;
+  color: #3C7E47;
 }

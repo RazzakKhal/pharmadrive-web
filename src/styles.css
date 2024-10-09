@@ -1,3 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+  /* todo : mettre les couleurs de la maquette */
+  --btn-green: #1A5319;
+  --bg-green: #D6EFD8;
+  --font-josefin : "Josefin Sans", sans-serif;
+}
+
+.btn-green-style{
+	border-radius: 15px;
+	color:white;
+	background-color: var(--btn-green);
+	width: 200px;
+	height: 50px;
+	font-size:20px;
+	font-family: var(--font-josefin);
+}
+
+
+
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)

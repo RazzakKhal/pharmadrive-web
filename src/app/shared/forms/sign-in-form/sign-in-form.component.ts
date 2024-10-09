@@ -40,7 +40,7 @@ export class SignInFormComponent {
     this.authService.login(loginForm).subscribe(
       {
         next : (res : TokenResponse) => {
-          this.authService.setToken(res.token); this.router.navigateByUrl("/")
+          this.authService.setToken(res.token); this.router.navigateByUrl("/home-client")
         },
         error : () => {
           snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_CONNEXION)

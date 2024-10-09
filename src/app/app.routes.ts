@@ -16,6 +16,6 @@ export const routes: Routes = [
   { path: 'all-articles', component: AllArticlesComponent },  // Route pour afficher tous les articles
   { path: 'all-pharmacy', component: AllPharmacyComponent },  // Route pour afficher toutes les pharmacies
   { path: 'home-client', component: HomeClientComponent },    // Route pour la page d'accueil client
-  { path: 'home-pharmacist', component: HomePharmacistComponent }  // Route pour la page d'accueil pharmacien
+  { path: 'home-pharmacist', component: HomePharmacistComponent }, // Route pour la page d'accueil pharmacien
 ];
 

@@ -6,7 +6,7 @@
     <div class="field">
       <label for="">Mot de passe</label>
       <div class="password-container">
-        <input [type]="isPasswordVisible ? 'text' : 'password'" id="password"/>
+        <input [type]="isPasswordVisible ? 'text' : 'password'" id="password" formControlName="password"/>
         <i class="material-icons eye-icon" (click)="togglePasswordVisibility()">
           {{ isPasswordVisible ? 'visibility_off' : 'visibility' }}
         </i>

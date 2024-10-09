@@ -6,6 +6,10 @@ import { AuthService } from '../../services/auth.service';
 import { snackBarFailConfiguration, SnackBarMessageEnum } from '../../helpers/material.helper';
 import { LoginForm } from '../../models/classes/login-form';
 import { TokenResponse } from '../../models/interfaces/token-response';
+import { mergeMap } from 'rxjs';
+import { UserService } from '../../services/user.service';
+import { User } from '../../models/interfaces/user';
+import { Roles } from '../../helpers/enum';
 
 
 @Component({
@@ -20,7 +24,7 @@ export class SignInFormComponent {
 
   isPasswordVisible = false;
 
-  constructor(private formBuilder : FormBuilder, private authService : AuthService , private router : Router, private snackBar : MatSnackBar) { }
+  constructor(private formBuilder : FormBuilder, private authService : AuthService , private router : Router, private snackBar : MatSnackBar, private userService : UserService) { }
 
   ngOnInit(): void {
 
@@ -37,10 +41,22 @@ export class SignInFormComponent {
 
     const loginForm = new LoginForm(this.loginForm.value.email, this.loginForm.value.password)
 
-    this.authService.login(loginForm).subscribe(
+    this.authService.login(loginForm).pipe(
+      mergeMap((res : TokenResponse) => {
+
+        this.authService.setToken(res.token); 
+        return this.userService.getUser()
+      })
+    ).subscribe(
       {
-        next : (res : TokenResponse) => {
-          this.authService.setToken(res.token); this.router.navigateByUrl("/home-client")
+        next : (res : User) => {
+          
+          // récupérer le profil et rediriger sur la bonne page en fonction du role
+          if(res.role === Roles.PHARMACIST){
+            this.router.navigateByUrl("/home-pharmacist")
+          }else{
+            this.router.navigateByUrl("/home-client")
+          }
         },
         error : () => {
           snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_CONNEXION)

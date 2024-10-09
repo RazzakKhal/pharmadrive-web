@@ -1,20 +1,65 @@
-form{
+  form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    height: 230px;
-  }
-  
-  .field{
-    display : flex;
+    font-family: var(--font-josefin);
+    height: 35vh;
+    }
+
+  .field {
+    display: flex;
     flex-direction: column;
-    line-height: 12px;
+    line-height: 25px;
     width: 250px;
   }
-  
-  input{
-    height : 50px;
+
+  input[type="password"],
+  input[type="text"] {
+    width: 85%;
+    padding-right: 30px;
+    padding-left: 10px;
+    height: 30px;
+    border-radius: 10px;
+    border: 2px solid var(--btn-green);
+    background-color: var(--bg-green);
+  }
+
+  .password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .eye-icon {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #3C7E47;
+  }
+
+  .login-button {
+    background-color: #3C7E47;
+    color: white;
+    border: none;
+    padding: 10px;
     border-radius: 5px;
-    border : 1px solid black;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .login-button:hover {
+    background-color: #2B5D36;
+  }
+
+  .create-account {
+    color: #3C7E47;
+    text-decoration: none;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .create-account:hover {
+    text-decoration: underline;
   }

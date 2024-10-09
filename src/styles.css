@@ -9,6 +9,7 @@
 }
 
 .btn-green-style{
+  cursor: pointer;
 	border-radius: 15px;
 	color:white;
 	background-color: var(--btn-green);
@@ -52,6 +53,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+  background-color: var(--bg-green);
 }
 ol, ul {
 	list-style: none;
@@ -67,4 +69,26 @@ q:before, q:after {
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  line-height: 25px;
+  width: 250px;
+}
+
+input {
+  height: 30px;
+  border-radius: 10px;
+  border: 2px solid var(--btn-green);
+  background-color: var(--bg-green);
+  font-family: var(--font-josefin);
+}
+
+label {
+  color: var(--btn-green);
+  font-weight: 500;
+  font-size: 18px;
+  text-align: left;
 }

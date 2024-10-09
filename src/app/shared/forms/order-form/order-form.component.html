@@ -1,0 +1,17 @@
+<form [formGroup]="orderForm" (ngSubmit)="onSubmit()">
+    <div class="field">
+        <label for="picture">Votre ordonnance</label>
+        <div class="container-picture-input">
+            <div #pictureInputDeep class="picture-input-deep">
+                <img #imageCarteVitale class="image-carte-vitale" src="assets/folder_picture.png"
+                    alt="ajout ordonnance">
+                <p>Sélectionnez un fichier</p>
+                <input id="picture" class="picture-input" type="file" accept="image/*,.pdf"
+                    (change)="onFileSelected($event)" formControlName="picture">
+                <!-- This will accept images and PDFs -->
+            </div>
+        </div>
+    </div>
+
+    <button class="btn-green-style custom-size" type="submit">Faire une commande</button>
+</form>

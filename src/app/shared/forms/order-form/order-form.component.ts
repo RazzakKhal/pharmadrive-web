@@ -27,7 +27,7 @@ export class OrderFormComponent implements OnInit{
   ngOnInit(): void {
 
     this.orderForm = this.formBuilder.group({
-      picture : ['', Validators.required]
+      picture : ['']
     })
   }
 
@@ -36,23 +36,15 @@ export class OrderFormComponent implements OnInit{
     snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_FORMULAIRE)
    }else{
 
-
-
-    if (this.selectedFile) {
       const formData = new FormData();
       formData.append('picture', this.selectedFile);
     
 
       this.orderService.createOrdonnance(formData).subscribe(
       {
-        next: (res: any) => { this.router.navigateByUrl("/articles"); },
+        next: (res: any) => { this.router.navigateByUrl("/all-articles"); },
         error: () => { snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_INSCRIPTION); }
       })
-
-    }else{
-      snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_ORDONNANCE)
-
-    }
    }
   }
 

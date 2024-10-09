@@ -12,7 +12,7 @@ export class OrderService {
 
 
   createOrdonnance(formData: FormData) {
-    return this.httpClient.post(`${API_URL}/home/prescription`, formData).pipe(
+    return this.httpClient.post(`${API_URL}/prescription`, formData).pipe(
       take(1)
     )
   }

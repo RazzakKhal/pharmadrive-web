@@ -51,7 +51,7 @@ export class SignUpFormComponent {
 
       this.authService.register(formData).subscribe(
         {
-          next: (res: TokenResponse) => { this.authService.setToken(res.token); this.router.navigateByUrl("/"); },
+          next: (res: TokenResponse) => { this.authService.setToken(res.token); this.router.navigateByUrl("/home-client"); },
           error: () => { snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_INSCRIPTION); }
         })
 

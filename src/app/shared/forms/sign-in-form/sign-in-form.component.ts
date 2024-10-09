@@ -18,6 +18,8 @@ import { TokenResponse } from '../../models/interfaces/token-response';
 export class SignInFormComponent {
   loginForm! : FormGroup
 
+  isPasswordVisible = false;
+
   constructor(private formBuilder : FormBuilder, private authService : AuthService , private router : Router, private snackBar : MatSnackBar) { }
 
   ngOnInit(): void {
@@ -48,4 +50,7 @@ export class SignInFormComponent {
    }
   }
 
+  togglePasswordVisibility() {
+    this.isPasswordVisible = !this.isPasswordVisible;
+  }
 }

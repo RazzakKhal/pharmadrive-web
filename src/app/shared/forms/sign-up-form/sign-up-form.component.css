@@ -1,4 +1,4 @@
-form{
+  form{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -7,21 +7,21 @@ form{
     font-family: var(--font-josefin);
     box-sizing: border-box;
   }
-  
+
   .field{
     display : flex;
     flex-direction: column;
     line-height: 25px;
     width: 250px;
   }
-  
+
   input{
     height : 30px;
     border-radius: 10px;
     border : 2px solid var(--btn-green);
     background-color: var(--bg-green);
   }
-  
+
   label{
     color : var(--btn-green);
     font-weight: 500;
@@ -64,4 +64,3 @@ form{
     margin-top:15px;
   }
 
- 

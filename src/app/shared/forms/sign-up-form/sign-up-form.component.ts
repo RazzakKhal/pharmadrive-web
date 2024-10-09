@@ -56,7 +56,7 @@ export class SignUpFormComponent {
         })
 
       }else{
-        snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_FORMULAIRE)
+        snackBarFailConfiguration(this.snackBar, SnackBarMessageEnum.FAIL_CONNEXION)
 
       }
 

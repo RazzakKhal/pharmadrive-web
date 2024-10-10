@@ -1,6 +1,8 @@
-import { Component} from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { ArticleService } from '../../services/article.service';
+import { OrderService } from '../../services/order.service';
 
 @Component({
   selector: 'app-bottom-sheet',
@@ -10,20 +12,29 @@ import { Router } from '@angular/router';
   styleUrl: './bottom-sheet.component.css'
 })
 
-export class BottomSheetComponent {
-  constructor(public router:Router){}
+export class BottomSheetComponent implements OnInit{
+  constructor(public router:Router, private articleService : ArticleService, private orderService : OrderService){}
+
+  ngOnInit(): void {
+    this.articleService.getSelectedArticle().subscribe((item) => {
+      this.basketItems = this.basketItems.filter((art : any) => art.name !== item.name)
+      this.basketItems.push(item)
+    })
+  }
   isExpanded = false;
 
-  basketItems = [
-    { name: 'Doliprane', quantity: 1, unitPrice: 5, totalPrice: 5 },
-    { name: 'Levemir', quantity: 2, unitPrice: 6, totalPrice: 12 },
-  ];
+  basketItems : any= [];
+
 
   toggleExpand() {
     this.isExpanded = !this.isExpanded;
   }
 
   confirmOrder() {
-    this.router.navigateByUrl('/all-pharmacy')
+
+    // creation de la commande sans choix de la pharmacie
+    this.orderService.createOrder({articles : this.basketItems}).subscribe((res : any) => {
+      this.router.navigateByUrl(`/all-pharmacy/${res.idCommande}`)
+    })
   }
 }

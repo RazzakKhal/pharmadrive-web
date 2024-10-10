@@ -17,4 +17,10 @@ export class OrderService {
     )
   }
 
+  createOrder(articles: any) {
+    return this.httpClient.post(`${API_URL}/commande`, articles).pipe(
+      take(1)
+    )
+  }
+
 }

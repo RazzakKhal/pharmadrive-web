@@ -1,0 +1,51 @@
+.container{
+    height: 40vh;
+    width: 80vw;
+    display: flex;
+    flex-direction: column;
+    border-radius: 20px;
+    border : 7px solid var(--btn-green);
+    align-items: center;
+    font-family: var(--font-josefin);
+}
+
+img{
+    height : 70%;
+    width: 100%;
+}
+
+.green-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color:white;
+    background-color: var(--btn-green);
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 30%;
+
+}
+.name{
+    font-size:20px;
+    line-height: normal;
+}
+
+.adress{
+    font-size:10px;
+    line-height: normal;
+}
+.name-adress{
+    align-self: self-start;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap : -15px;
+}
+
+.num-tel{
+    color:var(--btn-green);
+    background-color: white;
+    border-radius: 50px;
+    padding: 3px 10px;
+}

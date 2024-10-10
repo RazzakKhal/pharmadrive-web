@@ -1,20 +1,19 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { Observable, take } from 'rxjs';
 import { API_URL } from '../helpers/constantes';
-import { take } from 'rxjs';
+import { Pharmacy } from '../models/interfaces/pharmacy';
 
 @Injectable({
   providedIn: 'root'
 })
-export class OrderService {
+export class PharmacyService {
 
   constructor(private httpClient : HttpClient) { }
 
-
-  createOrdonnance(formData: FormData) {
-    return this.httpClient.post(`${API_URL}/prescription`, formData).pipe(
+  getAllPharmacies() : Observable<Pharmacy[]>{
+    return this.httpClient.get<Pharmacy[]>(`${API_URL}/pharmacy`).pipe(
       take(1)
-    )
+    );
   }
-
 }

@@ -1,1 +1,11 @@
-<p>all-pharmacy works!</p>
+<div class="container">
+    <div class="container-card" *ngFor="let pharmacy of (pharmacies | async)">
+        <div *ngIf="selectedPharmacy?.id === pharmacy.id" class="green-cache"></div>
+        <img *ngIf="selectedPharmacy?.id === pharmacy.id" class="check" src="assets/logo_check.png" alt="selection validée">
+        <app-pharmacy-card (click)="selectAPharmacy(pharmacy)" [adressPharmacie]="pharmacy.adressPharmacie"  [nomPharmacie]="pharmacy.nomPharmacie" [numero]="pharmacy.numero" [id]="pharmacy.id" [picture]="pharmacy.picture"></app-pharmacy-card>
+    </div>
+    <div #confirmationBar class="confirmation_bar">
+        <p>{{selectedPharmacy?.nomPharmacie}}</p>
+        <img (click)="saveOrder()"  src="assets/logo_check.png" alt="selection validée">
+    </div>
+</div>

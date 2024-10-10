@@ -1,0 +1,34 @@
+.profile-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  color: #4d624a;
+  /* Adjust based on your theme */
+}
+
+.profile-container h2 {
+  font-size: 1.8rem;
+  color: #4d624a;
+  font-weight: bold;
+}
+
+.input-group {
+  width: 75vw;
+}
+
+label {
+  font-size: 1rem;
+  color: #4d624a;
+}
+
+.profile-input {
+  width: 90%;
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 12px;
+  background-color: #4d624a;
+  color: #ffffff;
+  box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
+}

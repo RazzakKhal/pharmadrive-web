@@ -12,7 +12,11 @@ import { Router } from '@angular/router';
 export class HeaderComponent {
   constructor(public router:Router){}
 
-  redirectToHome(){
+  redirectToProfil(){
     this.router.navigateByUrl('/profil')
+  }
+
+  redirectToHome(){
+    this.router.navigateByUrl('/home-client')
   }
 }

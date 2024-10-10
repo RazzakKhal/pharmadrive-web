@@ -9,14 +9,14 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './article-card.component.css'
 })
 export class ArticleCardComponent {
-  quantity: number = 1;
+  quantity: number = 0;
 
   increaseQuantity() {
     this.quantity += 1;
   }
 
   decreaseQuantity() {
-    if (this.quantity > 1) {
+    if (this.quantity > 0) {
       this.quantity -= 1;
     }
   }

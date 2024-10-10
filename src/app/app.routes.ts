@@ -6,6 +6,7 @@ import { AllArticlesComponent } from './pages/all-articles/all-articles.componen
 import { AllPharmacyComponent } from './pages/all-pharmacy/all-pharmacy.component';
 import { HomeClientComponent } from './pages/home-client/home-client.component';
 import { HomePharmacistComponent } from './pages/home-pharmacist/home-pharmacist.component';
+import { UserProfilComponent } from './pages/user-profil/user-profil.component';
  // Assurez-vous que le chemin est correct
 
 // Définition des routes
@@ -17,5 +18,7 @@ export const routes: Routes = [
   { path: 'all-pharmacy', component: AllPharmacyComponent },  // Route pour afficher toutes les pharmacies
   { path: 'home-client', component: HomeClientComponent },    // Route pour la page d'accueil client
   { path: 'home-pharmacist', component: HomePharmacistComponent }, // Route pour la page d'accueil pharmacien
+  { path: 'profil', component: UserProfilComponent }, // Route pour la page profil utilisateur
+
 ];
 

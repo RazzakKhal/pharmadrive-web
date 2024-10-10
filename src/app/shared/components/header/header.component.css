@@ -1,13 +1,21 @@
 .container{
     position: sticky;
+    box-sizing: border-box;
+    padding-top: 30px;
     top: 0;
     display: flex;
-    justify-content: center;
-    align-items:center ; 
+    justify-content: space-around;
     height: 15vh;
     background-color: var(--bg-green);
 }
 
 img{
-    width : 80%;
+    width : 70%;
+    height: 50%;
+}
+
+.icon-profil{
+    padding: 5px;
+    width : 8%;
+    height: 40%;
 }

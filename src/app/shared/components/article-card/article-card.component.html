@@ -1,9 +1,9 @@
 <div class="card-container">
-  <img src="../../../../assets/imageDoliprane.png" alt="Article Image" class="article-image" />
+  <img [src]="picture" alt="Article Image" class="article-image" />
 
   <div class="card-details">
-    <h3 class="article-title">Doliprane</h3>
-    <p class="article-price">5 €</p>
+    <h3 class="article-title">{{nameArticle}}</h3>
+    <p class="article-price">{{price}} €</p>
 
     <div class="quantity-selector">
       <i class="material-icons icons" (click)="decreaseQuantity()">remove_circle</i>

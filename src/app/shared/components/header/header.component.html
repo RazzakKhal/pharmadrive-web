@@ -1,3 +1,7 @@
 <div class="container">
     <img src="assets/logo_pharmadrive.png" alt="logo_pharmadrive">
+    <img (click)="redirectToHome()" *ngIf="router.url === '/all-articles' || 
+    router.url === '/all-pharmacy' || 
+    router.url === '/home-client' || 
+    router.url === '/home-pharmacist'" class="icon-profil" src="assets/icone_profil.png" alt="retourner sur la page profil">
 </div>

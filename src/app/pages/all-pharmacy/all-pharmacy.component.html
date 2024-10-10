@@ -1,1 +1,5 @@
-<p>all-pharmacy works!</p>
+<div class="container">
+    <div *ngFor="let pharmacy of (pharmacies | async)">
+        <app-pharmacy-card [adressPharmacie]="pharmacy.adressPharmacie"  [nomPharmacie]="pharmacy.nomPharmacie" [numero]="pharmacy.numero" [id]="pharmacy.id" [picture]="pharmacy.picture"></app-pharmacy-card>
+    </div>
+</div>

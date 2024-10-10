@@ -7,6 +7,7 @@
     justify-content: space-around;
     height: 15vh;
     background-color: var(--bg-green);
+    z-index: 50;
 }
 
 img{

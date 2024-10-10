@@ -6,7 +6,6 @@ import { HeaderComponent } from './shared/components/header/header.component';
 import { OrderFormComponent } from './shared/forms/order-form/order-form.component';
 import { HomeClientComponent } from './pages/home-client/home-client.component';
 import { AllArticlesComponent } from './pages/all-articles/all-articles.component';
-import { ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({

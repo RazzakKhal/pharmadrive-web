@@ -1,6 +1,6 @@
 <div class="product-list">
-  <app-article-card></app-article-card>
-  <app-article-card></app-article-card>
-  <app-article-card></app-article-card>
+  <div  *ngFor="let article of allArticles">
+    <app-article-card [idArticle]="article.id"  [isRefundable]="article.isRefundable" [price]="article.price" [nameArticle]="article.nameArticle" [picture]="article.picture"></app-article-card>
+  </div>
 </div>
 <app-bottom-sheet></app-bottom-sheet>

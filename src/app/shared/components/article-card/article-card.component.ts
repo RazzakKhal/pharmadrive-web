@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 
 @Component({
@@ -10,6 +10,17 @@ import { ReactiveFormsModule } from '@angular/forms';
 })
 export class ArticleCardComponent {
   quantity: number = 0;
+
+  @Input() idArticle!: number;
+
+  @Input() price!: number;
+
+  @Input() nameArticle!: string;
+
+  @Input() isRefundable!: boolean;
+
+  @Input() picture!: string;
+
 
   increaseQuantity() {
     this.quantity += 1;

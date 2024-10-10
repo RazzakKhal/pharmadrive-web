@@ -1,0 +1,61 @@
+.bottom-sheet {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #205d37;
+  color: white;
+  transition: height 0.3s ease;
+  border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+
+.bottom-sheet.expanded {
+  height: 60%;
+  /* Adjust the height of the expanded view */
+}
+
+.bottom-sheet-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.basket-details {
+  padding: 15px;
+}
+
+.basket-items {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.basket-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background-color: #c4e0cd;
+  border-radius: 5px;
+}
+
+.confirm-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #f0f8f5;
+  color: #205d37;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.confirm-button i {
+  margin-right: 5px;
+}

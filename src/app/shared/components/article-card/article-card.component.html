@@ -1,0 +1,14 @@
+<div class="card-container">
+  <img src="../../../../assets/imageDoliprane.png" alt="Article Image" class="article-image" />
+
+  <div class="card-details">
+    <h3 class="article-title">Doliprane</h3>
+    <p class="article-price">5 €</p>
+
+    <div class="quantity-selector">
+      <i class="material-icons icons" (click)="decreaseQuantity()">remove_circle</i>
+      <input type="number" [value]="quantity" class="quantity-input" readonly />
+      <i class="material-icons icons" (click)="increaseQuantity()">add_circle</i>
+    </div>
+  </div>
+</div>

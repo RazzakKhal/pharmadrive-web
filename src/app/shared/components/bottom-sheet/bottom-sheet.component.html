@@ -1,0 +1,27 @@
+<div class="bottom-sheet" [class.expanded]="isExpanded">
+  <!-- Minimized View -->
+  <div class="bottom-sheet-header" (click)="toggleExpand()">
+    <div class="summary">
+      <i class="material-icons">shopping_cart</i>
+      Mon panier
+    </div>
+    <i class="material-icons">{{ isExpanded ? 'expand_more' : 'expand_less' }}</i>
+  </div>
+
+  <!-- Expanded View -->
+  <div *ngIf="isExpanded" class="basket-details">
+    <h3>Votre panier</h3>
+    <div class="basket-items">
+      <div *ngFor="let item of basketItems" class="basket-item">
+        <div>{{ item.name }}</div>
+        <div>{{ item.quantity }}</div>
+        <div>{{ item.unitPrice }}€</div>
+        <div>{{ item.totalPrice }}€</div>
+      </div>
+    </div>
+    <button class="confirm-button" (click)="confirmOrder()">
+      <i class="material-icons">check</i>
+      Confirmer mon panier
+    </button>
+  </div>
+</div>

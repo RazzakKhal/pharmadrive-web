@@ -11,7 +11,7 @@ import { AllArticlesComponent } from './pages/all-articles/all-articles.componen
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, SignInComponent, SignUpComponent, HeaderComponent, HomeClientComponent, AllArticlesComponent, ReactiveFormsModule],
+  imports: [RouterOutlet, SignInComponent, SignUpComponent, HeaderComponent, HomeClientComponent, AllArticlesComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -1,0 +1,80 @@
+.container {
+    background-color: var(--bg-green);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-josefin);
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    padding: 20px;
+    position: relative;
+}
+
+.slogan-image-div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.slogan-image-div > img {
+    width: 60vw;
+    height: auto;
+}
+
+.slogan-text {
+    color: #4d624a;
+    font-size: 20px;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    padding: 0 20px;
+}
+
+.contact-info {
+    background-color: #99b890;
+    color: white;
+    padding: 10px 30px;
+    border-radius: 50px;
+    font-size: 18px;
+    margin: 0 auto 30px;
+    width: 60%;
+    text-align: center;
+}
+
+
+.pharmacy-info {
+    background-color: #2d4d2a;
+    color: white;
+    padding: 10px 20px; 
+    border-radius: 10px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin: 0 auto 30px;  
+    width: 60%;  
+    text-align: center;  
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.return-button {
+    background-color: #2d4d2a;
+    color: white;
+    border: none;
+    padding: 10px 20px;  
+    font-size: 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 60%;  
+    text-align: center;
+    display: flex;
+    justify-content: center;  
+    align-items: center; 
+    margin: 0 auto 130px;  
+}
+
+.return-button:hover {
+    background-color: #375c39;
+}

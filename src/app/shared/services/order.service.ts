@@ -17,4 +17,16 @@ export class OrderService {
     )
   }
 
+  createOrder(articles: any) {
+    return this.httpClient.post(`${API_URL}/commande`, articles).pipe(
+      take(1)
+    )
+  }
+
+  addPharmacyToOrder(dto : any){
+    return this.httpClient.post(`${API_URL}/commande/add-pharmacy`, dto).pipe(
+      take(1)
+    )
+  }
+
 }

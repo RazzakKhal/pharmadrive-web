@@ -1,10 +1,11 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { PharmacyService } from '../../shared/services/pharmacy.service';
-import { Observable } from 'rxjs';
+import { mergeMap, Observable } from 'rxjs';
 import { Pharmacy } from '../../shared/models/interfaces/pharmacy';
 import { CommonModule } from '@angular/common';
 import { PharmacyCardComponent } from '../../shared/components/pharmacy-card/pharmacy-card.component';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { OrderService } from '../../shared/services/order.service';
 
 @Component({
   selector: 'app-all-pharmacy',
@@ -17,11 +18,12 @@ export class AllPharmacyComponent implements OnInit{
 
   pharmacies! : Observable<Pharmacy[]>
   selectedPharmacy :Pharmacy | undefined;
+  addPharmacyDto : any;
 
   @ViewChild('confirmationBar') confirmationBarRef!: ElementRef<HTMLDivElement>;
 
 
-  constructor(private pharmacyService : PharmacyService,private router: Router){}
+  constructor(private pharmacyService : PharmacyService,private router: Router, private route: ActivatedRoute, private orderService : OrderService){}
 
   ngOnInit(): void {
     this.pharmacies = this.getAllPharmacies();
@@ -38,7 +40,21 @@ export class AllPharmacyComponent implements OnInit{
 
   saveOrder(){
     //enregistre le choix de la pharmacie
-    this.redirectToThanks()
+    this.route.paramMap.pipe(
+      mergeMap(params => {
+        // Create the DTO based on the route parameter
+        this.addPharmacyDto = { 
+          commandeId: params.get('id'), 
+          pharmacyId: this.selectedPharmacy?.id 
+        };
+  
+        // Call the order service to add the pharmacy to the order
+        return this.orderService.addPharmacyToOrder(this.addPharmacyDto);
+      })
+    ).subscribe(() => {
+      // Redirect after successful save
+      this.redirectToThanks();
+    });
   }
 
   redirectToThanks(){

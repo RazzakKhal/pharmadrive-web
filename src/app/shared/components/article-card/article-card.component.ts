@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ArticleService } from '../../services/article.service';
 
 @Component({
   selector: 'app-article-card',
@@ -9,6 +10,8 @@ import { ReactiveFormsModule } from '@angular/forms';
   styleUrl: './article-card.component.css'
 })
 export class ArticleCardComponent {
+
+  constructor(private articleService : ArticleService){}
   quantity: number = 0;
 
   @Input() idArticle!: number;
@@ -24,11 +27,14 @@ export class ArticleCardComponent {
 
   increaseQuantity() {
     this.quantity += 1;
+    this.articleService.setSelectedArticle({ name: this.nameArticle, quantity: this.quantity, unitPrice: this.price, totalPrice: this.price * this.quantity })
   }
 
   decreaseQuantity() {
     if (this.quantity > 0) {
       this.quantity -= 1;
+      this.articleService.setSelectedArticle({ name: this.nameArticle, quantity: this.quantity, unitPrice: this.price, totalPrice: this.price * this.quantity })
+
     }
   }
 }

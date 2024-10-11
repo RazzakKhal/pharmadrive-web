@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Observable, take } from 'rxjs';
+import { Observable, Subject, take } from 'rxjs';
 import { Article } from '../models/interfaces/article';
 import { HttpClient } from '@angular/common/http';
 import { API_URL } from '../helpers/constantes';
@@ -9,6 +9,8 @@ import { API_URL } from '../helpers/constantes';
 })
 export class ArticleService {
 
+  selectedArticles$ = new Subject();
+
   constructor(private httpClient : HttpClient) { }
 
   getAllArticles() : Observable<Article[]>{
@@ -16,4 +18,17 @@ export class ArticleService {
       take(1)
     );
   }
+
+    // Méthode pour sélectionner un article + quantity
+    setSelectedArticle(article: any): void {
+      this.selectedArticles$.next(article);
+    }
+  
+    // Méthode pour récupérer l'article sélectionné en tant qu'Observable 
+    getSelectedArticle(): Observable<any> {
+      return this.selectedArticles$.asObservable();
+    }
+
+
+
 }

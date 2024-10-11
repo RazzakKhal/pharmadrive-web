@@ -1,3 +1,4 @@
+import { AuthService } from '../../shared/services/auth.service';
 import { User } from './../../shared/models/interfaces/user';
 import { UserService } from './../../shared/services/user.service';
 import { Component } from '@angular/core';
@@ -20,7 +21,7 @@ export class UserProfilComponent {
   get fullName(): string {
     return `${this.userProfile.firstName} ${this.userProfile.Name}`;
   }
-  constructor(private UserService : UserService) {}
+  constructor(private UserService : UserService, private authService : AuthService) {}
 
   ngOnInit(): void {
     // If fetching data from an API, make the call here and update `userProfile`.
@@ -34,5 +35,9 @@ export class UserProfilComponent {
         }
       }
     )
+  }
+
+  signOut(){
+    this.authService.signOut()
   }
 }

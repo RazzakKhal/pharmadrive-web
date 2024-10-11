@@ -16,4 +16,10 @@ export class PharmacyService {
       take(1)
     );
   }
+
+  getPharmacy(id : number) : Observable<Pharmacy>{
+    return this.httpClient.get<Pharmacy>(`${API_URL}/pharmacy/${id}`).pipe(
+      take(1)
+    );
+  }
 }

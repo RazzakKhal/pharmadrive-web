@@ -32,3 +32,8 @@ label {
   color: #ffffff;
   box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.15);
 }
+
+.sign-out{
+  font-size: 20px;
+  margin-top: 50px;
+}

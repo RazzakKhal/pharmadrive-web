@@ -58,7 +58,7 @@ export class AllPharmacyComponent implements OnInit{
   }
 
   redirectToThanks(){
-    this.router.navigateByUrl('/thanks')
+    this.router.navigateByUrl(`/thanks/${this.selectedPharmacy?.id}`)
   }
 
 }

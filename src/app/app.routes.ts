@@ -22,7 +22,7 @@ export const routes: Routes = [
   { path: 'home-client', component: HomeClientComponent },    // Route pour la page d'accueil client
   { path: 'home-pharmacist', component: HomePharmacistComponent }, // Route pour la page d'accueil pharmacien
   { path: 'profil', component: UserProfilComponent }, // Route pour la page profil utilisateur
-  { path: 'thanks', component: ThanksComponent }, // Route pour la page de remerciements
+  { path: 'thanks/:id', component: ThanksComponent }, // Route pour la page de remerciements
 
 
 ];

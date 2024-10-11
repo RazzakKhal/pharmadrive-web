@@ -6,6 +6,7 @@ import { LoginForm } from '../models/classes/login-form';
 import { RegisterForm } from '../models/classes/register-form';
 import { TokenResponse } from '../models/interfaces/token-response';
 import { API_URL } from '../helpers/constantes';
+import { Router } from '@angular/router';
 
 
 @Injectable({
@@ -15,7 +16,7 @@ export class AuthService {
 
   readonly token = "token";
 
-  constructor(private httpClient : HttpClient) { }
+  constructor(private httpClient : HttpClient, private router : Router) { }
 
   login(loginForm : LoginForm) : Observable<TokenResponse>{
    return this.httpClient.post<TokenResponse>(`${API_URL}/auth/login`, loginForm).pipe(
@@ -48,6 +49,12 @@ export class AuthService {
       return true;
     }
     return false;
+
+  }
+
+  signOut(){
+    localStorage.removeItem(this.token);
+    this.router.navigateByUrl('/sign-in')
 
   }
 }
